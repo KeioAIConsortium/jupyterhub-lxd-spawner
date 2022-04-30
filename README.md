@@ -30,7 +30,7 @@ If container is not running, assign one gpu to it and start it.(If you want to k
 
 Check jupyterhub-singleuser program is running.
 
-Only when the program is running, return None. Otherwise, return the number.
+Only when the program is running, return None. Otherwise, return the number representing error message.
 
 ## short tips
 
