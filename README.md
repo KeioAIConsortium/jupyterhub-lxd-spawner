@@ -20,15 +20,15 @@ Container will be created and its status will be "stopped".
 
 ### start
 
-After loggin in, usually this will be called.
+After loggin in, ordinarily this will be called.
 
-If container already has started, restart it.
+If container is already running, restart the jupyterhub-singleuser process.
 
-If container doesn't start, assign one gpu to it and start it.(If you want to know more details about gpu assignment program, refer to [Iris](https://github.com/KeioAIConsortium/iris) )
+If container is not running, assign one gpu to it and start it.(If you want to know more details about gpu assignment program, refer to [Iris](https://github.com/KeioAIConsortium/iris) )
 
 ### poll
 
-Check jupyterhub-singleuser program is runnning.
+Check jupyterhub-singleuser program is running.
 
 Only when the program is running, return None. Otherwise, return the number.
 
@@ -43,10 +43,12 @@ iris_url = Unicode(
 )
 ```
 
-If you write something like this, you can get the config same as variable name.
+You can retrive the config in Spawner like above.
 
 ```python
 c.LXDSpawner.iris_url = 'http://iris'
 ```
+
+If your host name is `ubuntu`, Spawner calls the API, which url is `http://iris-ubuntu.lxd`.
 
 In `jupyterhub_config.py`, configure as above.
