@@ -37,6 +37,8 @@ runcmd:
 
 
 def write_env(container, env):
+    if "JPY_API_TOKEN" in env:
+        env["JUPYTERHUB_API_TOKEN"] = env["JPY_API_TOKEN"]
     env_file = "\n".join("{}={}".format(k, v) for (k, v) in env.items())
     container.files.put("/etc/jupyterhub-singleuser-environment", env_file)
 
