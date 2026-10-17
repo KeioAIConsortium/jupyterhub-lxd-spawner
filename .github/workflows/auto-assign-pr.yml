@@ -1,0 +1,13 @@
+name: Auto assign PR
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions: {}
+
+jobs:
+  auto-assign-pr:
+    uses: KeioAIConsortium/server-workflows/.github/workflows/auto-assign-pr-author.yml@main
+    permissions:
+      pull-requests: write
