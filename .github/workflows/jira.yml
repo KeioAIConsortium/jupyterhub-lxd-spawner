@@ -10,4 +10,5 @@ permissions: {}
 jobs:
   jira:
     uses: KeioAIConsortium/server-workflows/.github/workflows/jira-transition.yml@main
-    secrets: inherit
+    secrets:
+      SERVER_JIRA_TOKEN: ${{ secrets.SERVER_JIRA_TOKEN }}
