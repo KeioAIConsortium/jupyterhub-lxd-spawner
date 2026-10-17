@@ -1,0 +1,13 @@
+# 各リポジトリに置く呼び出し側。中身は server-workflows の jira-transition.yml にある。
+name: Jira
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, ready_for_review, converted_to_draft, closed]
+
+permissions: {}
+
+jobs:
+  jira:
+    uses: KeioAIConsortium/server-workflows/.github/workflows/jira-transition.yml@main
+    secrets: inherit
